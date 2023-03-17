@@ -3,10 +3,6 @@
 }
 
 .body-modal {
-      display: none;
-}
-
-.opened {
       display: block;
 }
 

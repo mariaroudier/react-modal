@@ -1,5 +1,5 @@
 {
-  "name": "modal-component-library",
+  "name": "react-simple-modal",
   "version": "0.1.0",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -46,6 +46,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "URL_OF_YOUR_REPOSITORY"
+    "url": "https://github.com/mariaroudier/react-modal.git"
   }
 }

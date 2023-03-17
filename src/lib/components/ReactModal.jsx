@@ -1,59 +1,41 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import iconClose from '../assets/icon_close.png'
 import './ReactModal.css'
 
 /**
-* Function component that render modal with ... (multiple optionals params)
- * @listens {updateModal} hide - Handle state from parent for hide the modal component
-* @param {boolean} isVisible - State for modal visibility
-
+* Function component that render modal with multiple optionals params
+* @listens {closeModal}closeModal - the function to close the modal
+* @param {string} text - the text to display in the span of the modal
+* @param {object} styleModal, styleModalBg, styleText - the objects to customise the style of the background of the modal, modal window and text.
 */
 
-
-function ReactModal({text, updateModal, isVisible}) {
-
-      const newState = false
-      const modalRef = useRef(null)
-
-      /**
-       * Add event listener when component is mount.
-       * */
-      function closeModalEvent(e) {
-            updateModal(newState)
-
-      }
-      useEffect(() => {
-            if(!isVisible) return;
-
+function ReactModal({
+      text, 
+      closeModal,
+      styleModal, 
+      styleModalBg, 
+      styleText
+}) {
+      /*
+      * Add event listener
+      * @event closeModalEvent#keyup
+      */
+      const pushKey = () => {
             window.addEventListener("keyup", (e) => {
-                  if (e.key === "Escape" && isVisible) {
-                        closeModalEvent(e)
-                        
+                  if (e.key === "Escape" || e.key === "Enter") {
+                        closeModal()  
                   }
             })
-
-            const handleMouseClick = e => {
-                  // if(!modalRef.current) return;
-                  // if(!modalRef.current.contains(e.target)) {
-                  //       closeModalEvent()
-                  // }
-            }
-
-            document.addEventListener("click", handleMouseClick)
-
-            return () => {
-                  document.removeEventListener("click", handleMouseClick)
-            }
-      })
-
+      }
+      pushKey()
 
       return (
-            <div className={isVisible === true ? 'body-modal opened' : 'body-modal' } style= {{ position: "relative"}}>
-                  <div className="bg-modal">
-                        <div className="modal" ref={modalRef}>
-                              {text}
-                              <img className='icon-close' src={iconClose} onClick={() => updateModal(newState)} alt='icon-close'/>
+            <div className='body-modal' style= {{ position: "relative"}}>
+                  <div className="bg-modal" style={styleModalBg}>
+                        <div className="modal" style={styleModal}>
+                              <span style={styleText}>{text}</span>
+                              <img className='icon-close' src={iconClose} onClick={() => closeModal()} onFocus={() => pushKey()}alt='icon-close' tabIndex="0" aria-label="Close"/>
                         </div>
                   </div>
             </div>
