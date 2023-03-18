@@ -31,7 +31,7 @@ or
 
 
 	`
-	import ReactModal from "react-simple-modal";
+	import ReactModal from "@mashka17/react-simple-modal";
 	`
 
 
