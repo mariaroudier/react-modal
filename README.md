@@ -39,16 +39,16 @@ or
 
 ```
 	function ExampleComponent() {
-	   return (
-	     <div>
-	       <ReactModal 
-	       text={yourText}
-	       closeModal={yourCloseFunction}
-	       styleModal={yourModalStyle}
-	       styleModalBg={yourBgStyle}
-	       styleText={yourTextStyle} />
-		</div>
-		);
+	      return (
+                  <div>
+                        <ReactModal 
+                        text={yourText}
+                        closeModal={yourCloseFunction}
+                        styleModal={yourModalStyle}
+                        styleModalBg={yourBgStyle}
+                        styleText={yourTextStyle} />
+                  </div>
+	      );
 	}
 ```
 
