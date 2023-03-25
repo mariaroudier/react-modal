@@ -1,6 +1,6 @@
 
 import React from 'react';
-import iconClose from '../assets/icon_close.png'
+import iconClose from './icon_close.png'
 import './ReactModal.css'
 
 /**
