@@ -39,8 +39,8 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
   },
-  "main": "dist/ReactModal.jsx",
-  "module": "dist/ReactModal.jsx",
+  "main": "dist/ReactModal.js",
+  "module": "dist/ReactModal.js",
   "files": [
     "dist",
     "README.md"
